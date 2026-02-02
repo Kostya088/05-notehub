@@ -26,7 +26,10 @@ export default function App() {
   });
 
   const updateSearchQuery = useDebouncedCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => setSearchQuery(e.target.value),
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      setSearchQuery(e.target.value);
+      setCurrentPage(1);
+    },
     300,
   );
 
